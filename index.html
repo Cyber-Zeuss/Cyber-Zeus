@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Writeups</title>
+    <!-- Google Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+
+    <!-- Include Highlight.js CSS for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css">
+
+    <!-- Include Marked.js for Markdown rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.1.0/marked.min.js"></script>
+    <!-- Include Highlight.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="top-header">
+      <div class="logo d-flex align-items-center">
+        <img class="rounded-circle" src="./images/zeus11.png" style="max-width: 40px;" alt="">
+        <h5 class="my-0 mx-2">Cyber-Zeus</h5>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              <li><a href="#" class="fs-6 malware">SRL Case</a></li>
+          </ul>
+      </nav>
+  </header>
+  <div class="row">
+    <aside class="left-sidebar col-sm-12 col-md-4 col-lg-3">
+      <div class="profile">
+          <img src="./images/profile7.jpg"  alt="Profile Picture">
+          <h2>Ahmed Kamal</h2>
+          <p>SOC | DFIR</p>
+          <p><i class="fa-solid fa-location-dot"></i> Egypt</p>
+          <ul class="social-links">
+              <li><a href="about.html">About Me</a></li>
+              <li><a href="https://www.linkedin.com/in/ahmed-kamal-elgamal-727164293/" target="_blank">LinkedIn</a></li>
+              <li><a href="https://github.com/Ahmed-kamal1" target="_blank">GitHub</a></li>
+          </ul>
+      </div>
+  </aside>
+  <!-- Main Content -->
+  <main class="col-sm-12 col-md-8 col-lg-9">
+      <section id="writeups-list">
+          <h2 class="text-light my-4"> Posts</h2>
+          <ul>
+            <!-- Start Writeup  -->
+              <li>
+                  <div class="post-preview row">
+                      <div class="image col-sm-12 col-md-5 col-lg-4">
+                        <img class="rounded" src="images/Intro.jpg" alt="Intro:Investigating Suspicious Activity at SRL">
+                      </div>
+                      <div class="info col-sm-12 col-md-6 col-lg-7">
+                        <h3 class="fw-bold"><a href="writeup.html?file=writeup1.md">Intro:Investigating Suspicious Activity at SRL</a></h3>
+                        <p class="fs-5">In this series of write-ups, we will systematically investigate suspicious activities within the Stark Research Labs network using the SANS FOR508 methodology</p>
+                        <span>21 Nov 2024 | 15 minute read</span>
+                      </div>
+                  </div>
+              </li>
+              <!-- End Writeup  -->
+              <li>
+                  <div class="post-preview row">
+                      <div class="image col-sm-12 col-md-5 col-lg-4">
+                        <img class="rounded" src="images/CH11.jpg" alt="CH1:1: Persistence of Malware">
+                      </div>
+                    <div class="info col-sm-12 col-md-6 col-lg-7">
+                      <h3 class="fw-bold"><a href="writeup.html?file=writeup2.md">CH1 part1: Persistence of Malware </a></h3>
+                      <p class="fs-5">This write-up examines the persistence mechanisms used by malware within the Stark Research Labs network, focusing on techniques like AutoStart locations, service creation, and scheduled tasks.</p>
+                      <span>10 Sep 2024 | 20 minute read</span>
+                    </div>
+                  </div>
+              </li>
+              
+            
+          </ul>
+      </section>
+  </main>
+  </div>
+</div>
+  <!-- Start Footer -->
+  <div class="footer">
+    <p>&copy; 2024 - By <a style="color: #999;"target="_blank" href="https://www.linkedin.com/in/ahmed-reda-044b13300/">EL-MONGY</a></p>
+  </div>
+  <!-- End Footer -->
+
+<style>
+  body{
+    background-color: #1e1e2d;
+    font-family: "Cairo", serif;
+  }
+    a {
+        text-decoration: none;
+    }
+    /* Top Navigation Bar */
+    .top-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        color: white;
+    }
+    .logo{
+      cursor: pointer;
+    }
+
+    .top-nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .top-nav ul li {
+        margin: 0 15px;
+    }
+
+    .top-nav ul li .malware{
+        font-size: 19px !important;
+        color: white;
+        font-weight: bold;
+        position: relative;
+        transition: 0.7s;
+    }
+    .top-nav ul li .malware:hover{
+      color: #0097ff;
+    }
+    .top-nav ul li .malware::before{
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #0097ff;
+    }
+    /* Left Sidebar */
+    .left-sidebar {
+        background-color: transparent;
+        color: #999;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    @media (max-width: 767px){
+      .left-sidebar .profile{
+        text-align: center;
+      }
+    }
+
+    .left-sidebar .profile img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        transition: 0.7s;
+    }
+    .left-sidebar .profile img:hover{
+      filter: blur(2px);
+    }
+
+    .left-sidebar h2 {
+        margin-top: 10px;
+    }
+
+    .social-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .social-links li {
+      margin-bottom: 10px;
+    }
+
+    .social-links li a {
+        color: #999;
+        text-decoration: none;
+    }
+    .social-links li a:hover{
+      border-bottom: 2px solid #999;
+    }
+
+    /* Main Content */
+    #writeups-list ul{
+      padding: 20px;
+      list-style: none;
+    }
+    .post-preview {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      background-color: #f4f4f4;
+      margin-bottom: 40px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: -5px 5px 4px #e6e6e669;
+      transition: 1s;
+    }
+    .post-preview:hover{
+      transform: translate(10px, -10px);
+      box-shadow: -10px 10px 8px #e6e6e669;
+    }
+    .post-preview img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .post-preview h3 {
+        margin: 10px 0;
+    }
+
+    .post-preview p {
+        margin: 10px 0 20px;
+    }
+    .post-preview span{
+      color: #999;
+    }
+
+    footer {
+        text-align: center;
+        background-color: #1e1e2d;
+        color: white;
+    }
+
+    /* Markdown styles */
+    .markdown-body {
+        background-color: white;
+        border-radius: 6px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    pre {
+        background-color: #282c34;
+        padding: 15px;
+        border-radius: 5px;
+        overflow: auto;
+        border: 1px solid #ccc;
+    }
+
+    /* Code styling */
+    pre code {
+        display: block;
+        font-size: 14px;
+    }
+
+    .footer {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1a222c;
+        position: relative;
+    }
+
+    .footer p {
+        margin: 0;
+        font-size: 15px;
+        font-weight: bold;
+        color: #999;
+    }
+</style>
+
+<script>
+    async function loadMarkdown() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const file = urlParams.get('file'); // Get the 'file' parameter from URL
+
+        if (file) {
+            try {
+                const response = await fetch(`writeups/${file}`);
+                if (!response.ok) throw new Error('Error loading file');
+                const text = await response.text();
+                
+                // Convert Markdown to HTML and insert it into the article
+                document.getElementById('content').innerHTML = marked(text);
+
+                // Reapply syntax highlighting after Markdown is loaded
+                document.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightElement(block);
+                });
+
+            } catch (error) {
+                document.getElementById('content').innerHTML = '<p>Error loading markdown: ' + error.message + '</p>';
+            }
+        } else {
+            document.getElementById('content').innerHTML = '<p>No file specified.</p>';
+        }
+    }
+
+    loadMarkdown();
+</script>
+<script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

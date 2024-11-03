@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writeup</title>
+    <!-- GitHub Markdown CSS for consistent styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-dark.min.css">
+    <!-- Highlight.js GitHub Dark theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.1.0/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #272626!important;
+            color: #e8e6e3;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #e8e6e3;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #e8e6e3;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h3 {
+            font-size: 1.25em;
+            color: #ffffff;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h4 {
+            font-size: 1.1em;
+            color: #e8e6e3;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        main {
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #272626!important;
+        }
+
+        pre {
+            background: #161616!important;
+            border-radius: 3px;
+            padding: 16px;
+            overflow: auto;
+        }
+
+        code {
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 90%;
+        }
+
+        pre code {
+            color: #e8e6e3;
+        }
+
+        a {
+            color: #61dafb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            background-color: transparent !important;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="markdown-body">
+    
+
+    <main>
+        <article id="content"></article>
+    </main>
+
+    <footer>
+      <p style="margin: 15px; text-align: center;">&copy; 2024 - By <a style="color: #999;"target="_blank" href="https://www.linkedin.com/in/ahmed-reda-044b13300/">EL-MONGY</a></p>
+    </footer>
+
+    <script>
+        async function loadMarkdown() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const file = urlParams.get('file');
+
+            if (file) {
+                try {
+                    const response = await fetch(`writeups/${file}`);
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    const text = await response.text();
+                    document.getElementById('content').innerHTML = marked(text);
+
+                    // Highlight code blocks after Markdown is rendered
+                    document.querySelectorAll('pre code').forEach((block) => {
+                        hljs.highlightBlock(block);
+                    });
+
+                } catch (error) {
+                    document.getElementById('content').innerHTML = '<p>Error loading markdown: ' + error.message + '</p>';
+                }
+            } else {
+                document.getElementById('content').innerHTML = '<p>No file specified.</p>';
+            }
+        }
+        loadMarkdown();
+    </script>
+</body>
+</html>
